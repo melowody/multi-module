@@ -12,15 +12,15 @@ class MultiModulePlugin : Plugin<Project> {
 }
 
 open class MultiModuleExtension(private val project: Project) {
-    fun tryMultiModule(projectName: String, fallback: String) {
+    fun tryMultiModule(projectName: String, fallback: String, function: String = "compileOnly") {
         val normalizedName = projectName.removePrefix(":")
         val depProj = project.findProject(":$normalizedName")
 
         project.dependencies {
             if (depProj != null) {
-                add("compileOnly", depProj)
+                add(function, depProj)
             } else {
-                add("compileOnly", fallback)
+                add(function, fallback)
             }
         }
     }
