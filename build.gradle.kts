@@ -26,7 +26,8 @@ tasks.test {
 }
 
 gradlePlugin {
-    website.set("https://github.com")
+    website.set("https://github.com/melowody/multi-module")
+    vcsUrl.set("https://github.com/melowody/multi-module.git")
 
     plugins {
         create("multiModule") {
