@@ -35,6 +35,8 @@ gradlePlugin {
             implementationClass = "dev.meluhdy.MultiModulePlugin"
             displayName = "Try Multi Module Plugin"
             description = "Attempts to find a project in a multi-module setup, otherwise falls back to external artifact"
+
+            tags.set(listOf("multi-module", "multimodule", "management", "utils"))
         }
     }
 }
